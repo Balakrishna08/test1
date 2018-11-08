@@ -1,0 +1,25 @@
+<form class="form-group" #form='ngForm' (ngSubmit)='addItems(form)'>
+
+     <input type='text' name='item' value="" ngModel />
+     <button type='submit' name='button' class='btn btn-primary'>add Item</button>
+</form>
+<form class="form-group" #form1='ngForm' (ngSubmit)='updateItems(form1)'>
+
+    <input type='text' name='itemcopy' value="" ngModel/>
+    <button type='submit' name='button1' (click)="updateName()" class='btn btn-primary'>update Item</button>
+</form>
+
+
+<button type='button' name='button' class="btn btn-success" (click)='getItemsReceivedFromServiceClass()'>Get Items</button>
+<show-hide-password size="sm" icon="empty|nothing"  [btnOutline]="false">
+    <input type="password" name="password" placeholder="Password" autocomplete="new-password">
+  </show-hide-password>
+ 
+<ul class='list-group'>
+    <li *ngFor='let list of itemsReceived' class='list-group-item'>
+             {{list}}
+    </li>
+</ul>
+<script type="text/javascript">
+	$("#password").password('toggle');
+</script>
